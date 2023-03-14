@@ -1,6 +1,8 @@
 import requests
 import telebot
 
+bot = telebot.TeleBot("YOUR_API_TOKEN_HERE")
+
 url = "https://chatgpt-4-bing-ai-chat-api.p.rapidapi.com/chatgpt-4-bing-ai-chat-api/0.1/send-message/"
 
 @bot.message_handler(commands=['chat'])
