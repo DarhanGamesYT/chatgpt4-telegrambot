@@ -16,3 +16,5 @@ How to access the API
 Currently the API is deployed through RapidAPI, to access the API please check the RapidAPI API listing:
 
 https://rapidapi.com/stefano-pochet-stefano-pochet-default/api/chatgpt-4-bing-ai-chat-api
+
+my telegram: @kazakhstanadm
