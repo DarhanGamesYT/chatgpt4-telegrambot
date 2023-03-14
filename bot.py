@@ -7,7 +7,8 @@ url = "https://chatgpt-4-bing-ai-chat-api.p.rapidapi.com/chatgpt-4-bing-ai-chat-
 def handle_chat(message):
     global reqwest
     reqwest = message.text[6:].replace(' ', '%20').replace('?', '%3F')
-    
+    chat_id = message.chat.id
+    bot.send_chat_action(chat_id, '⌛')
     payload = "bing_u_cookie=%3CREQUIRED%3E&question={reqwest}"
     headers = {
       "content-type": "application/x-www-form-urlencoded",
@@ -15,7 +16,7 @@ def handle_chat(message):
       "X-RapidAPI-Host": "chatgpt-4-bing-ai-chat-api.p.rapidapi.com"
     }
     response = requests.request("POST", url, data=payload, headers=headers)
-    
+    bot.delete_message(chat_id, message_id)
     bot.reply_to(message, response.text)
 
 bot.polling()
